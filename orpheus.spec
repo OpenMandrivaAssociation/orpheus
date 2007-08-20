@@ -1,6 +1,6 @@
 %define name orpheus
 %define version 1.5
-%define release 2mdk
+%define release %mkrel 2
 
 %define Summary A text-mode player for CDs and MP3 files
 %define title	Orpheus
