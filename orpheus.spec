@@ -1,6 +1,6 @@
 %define name orpheus
 %define version 1.6
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define Summary A text-mode player for CDs and MP3 files
 %define title	Orpheus
@@ -22,7 +22,7 @@ Patch3: patch.orpheus-1.5.fix-play-n-1.diff
 Patch4: improve-manpage.diff
 Patch5: add-more-instructions.diff
 Patch6: regenerate-configure-scripts.diff
-
+Patch7: orpheus-1.6-fix_build_x86_64.diff
 BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	libghttp-devel, libvorbis-devel, libncurses-devel
@@ -43,6 +43,7 @@ playlists. Nice interface to modify MP3 ID tags is provided.
 %patch4 -p1 
 %patch5 -p1 
 %patch6 -p1 
+%patch7 -p0 
 
 %build
 %configure2_5x
