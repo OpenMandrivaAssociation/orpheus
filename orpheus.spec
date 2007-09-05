@@ -1,6 +1,6 @@
 %define name orpheus
-%define version 1.5
-%define release %mkrel 3
+%define version 1.6
+%define release %mkrel 1
 
 %define Summary A text-mode player for CDs and MP3 files
 %define title	Orpheus
@@ -15,9 +15,14 @@ URL: 		http://thekonst.net/orpheus/
 
 Source: 	http://thekonst.net/download/%{name}-%{version}.tar.bz2
 
-Patch0:		orpheus-mixerctl.patch
-Patch1:		orpheus-uitext.patch
-Patch2:		orpheus-oggtrack.patch
+Patch0: 101_fix-buffer-overflow.diff
+Patch1: patch.orpheus-1.5.add-start-stop-clear-1.diff
+Patch2: patch.orpheus-1.5.fix-nexttrack-prevtrack-1.diff
+Patch3: patch.orpheus-1.5.fix-play-n-1.diff
+Patch4: improve-manpage.diff
+Patch5: add-more-instructions.diff
+Patch6: regenerate-configure-scripts.diff
+
 BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	libghttp-devel, libvorbis-devel, libncurses-devel
@@ -31,9 +36,13 @@ playlists. Nice interface to modify MP3 ID tags is provided.
 %prep
 %setup -q
 
-%patch0 -p0 -b .mixerctl
-%patch1 -p0 -b .uitext
-%patch2 -p0 -b .oggtrack
+%patch0 -p1 
+%patch1 -p1 
+%patch2 -p1 
+%patch3 -p1 
+%patch4 -p1 
+%patch5 -p1 
+%patch6 -p1 
 
 %build
 %configure2_5x
