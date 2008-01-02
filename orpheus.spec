@@ -23,6 +23,7 @@ Patch4: improve-manpage.diff
 Patch5: add-more-instructions.diff
 Patch6: regenerate-configure-scripts.diff
 Patch7: orpheus-1.6-fix_build_x86_64.diff
+BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	libghttp-devel, libvorbis-devel, libncurses-devel
 Requires:	mpg123, vorbis-tools
