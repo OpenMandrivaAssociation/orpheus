@@ -1,6 +1,6 @@
 %define name orpheus
 %define version 1.6
-%define release %mkrel 4
+%define release %mkrel 5
 
 %define Summary A text-mode player for CDs and MP3 files
 %define title	Orpheus
@@ -9,7 +9,7 @@ Summary: 	%Summary
 Name: 		%name
 Version: 	%version
 Release: 	%release
-License: 	GPL
+License: 	GPLv2+
 Group:		Sound
 URL: 		http://thekonst.net/orpheus/
 
@@ -23,6 +23,7 @@ Patch4: improve-manpage.diff
 Patch5: add-more-instructions.diff
 Patch6: regenerate-configure-scripts.diff
 Patch7: orpheus-1.6-fix_build_x86_64.diff
+Patch8: orpheus-1.6-fix-gcc43.patch
 BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	libghttp-devel, libvorbis-devel, libncurses-devel
@@ -44,6 +45,7 @@ playlists. Nice interface to modify MP3 ID tags is provided.
 %patch5 -p1 
 %patch6 -p1 
 %patch7 -p0 
+%patch8 -p1 -b .gcc43
 
 %build
 %configure2_5x
@@ -65,5 +67,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc README COPYING INSTALL TODO ChangeLog
 
 %{_bindir}/*
-%{_datadir}/locale/*
-
