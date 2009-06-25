@@ -1,6 +1,6 @@
 %define name orpheus
 %define version 1.6
-%define release %mkrel 5
+%define release %mkrel 6
 
 %define Summary A text-mode player for CDs and MP3 files
 %define title	Orpheus
@@ -26,7 +26,9 @@ Patch7: orpheus-1.6-fix_build_x86_64.diff
 Patch8: orpheus-1.6-fix-gcc43.patch
 BuildRoot: 	%_tmppath/%{name}-%{version}-%{release}-buildroot
 
-BuildRequires:	libghttp-devel, libvorbis-devel, libncurses-devel
+# libghttp is now dead, do not build requires it
+#BuildRequires:	libghttp-devel
+BuildRequires:	libvorbis-devel, libncurses-devel
 Requires:	mpg123, vorbis-tools
 
 %description
