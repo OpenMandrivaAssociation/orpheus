@@ -1,0 +1,35 @@
+Index: kkconsui-0.1/src/texteditor.cc
+===================================================================
+--- kkconsui-0.1/src/texteditor.cc
++++ kkconsui-0.1/src/texteditor.cc	2007-09-05 15:46:26.000000000 +0200
+@@ -1940,7 +1940,7 @@
+ }
+ 
+ int texteditor::findint(void *p1, void *p2) {
+-    return *(int *) p1 != (int) p2;
++    return *(int *) p1 != (long) p2;
+ }
+ 
+ int texteditor::findhighline(void *p1, void *p2) {
+Index: kkstrtext-0.1/kkstrtext.cc
+===================================================================
+--- kkstrtext-0.1/kkstrtext.cc
++++ kkstrtext-0.1/kkstrtext.cc	2007-09-05 15:44:30.000000000 +0200
+@@ -431,7 +431,7 @@
+ }
+ 
+ int intcompare(void *s1, void *s2) {
+-    return (int) s1 != (int) s2;
++    return (long) s1 != (long) s2;
+ }
+ 
+ string i2str(int i) {
+@@ -885,7 +885,7 @@
+ #ifdef HAVE_ICONV
+     iconv_t cd = iconv_open(tocs.c_str(), fromcs.c_str());
+ 
+-    if(((int) cd) != -1) {
++    if(((long) cd) != -1) {
+ 	string r, text(atext);
+ 	size_t inleft, outleft, soutleft;
+ 	char *inbuf, *outbuf, *sinbuf, *soutbuf;

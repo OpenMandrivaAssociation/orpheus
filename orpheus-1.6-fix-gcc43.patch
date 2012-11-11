@@ -1,0 +1,12 @@
+diff -p -up orpheus-1.6/src/streamtrack.cc.gcc43 orpheus-1.6/src/streamtrack.cc
+--- orpheus-1.6/src/streamtrack.cc.gcc43	2009-05-28 23:35:00.000000000 +0200
++++ orpheus-1.6/src/streamtrack.cc	2009-05-28 23:35:44.000000000 +0200
+@@ -21,7 +21,7 @@
+ * USA
+ *
+ */
+-
++#include <memory>
+ #include "streamtrack.h"
+ #include "playlist.h"
+ 
