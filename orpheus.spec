@@ -11,7 +11,7 @@ Version: 	%version
 Release: 	%release
 License: 	GPLv2+
 Group:		Sound
-URL: 		http://thekonst.net/orpheus/
+URL: 		https://thekonst.net/orpheus/
 
 Source: 	http://thekonst.net/download/%{name}-%{version}.tar.bz2
 
